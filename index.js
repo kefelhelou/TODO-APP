@@ -1,9 +1,9 @@
 // TO DO APP
 const express = require('express');
 const app = express();
-const PORT = 8080;
+const PORT = 4000;
 
-let arr = ['a', 'b', 'c', 'd'];
+const items = [{description: 'study'}, {description: 'play'} ];
 
 // ADD MIDDLEWARE LOG EVERY REQUEST METHOD AND URL middleware always has next, the must has next()
 // IT SHOULD BE IN THE TOP
@@ -13,11 +13,17 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get('/items', function (req, res) {
-  res.send(arr);
-});
 // SETUP STATIC HANDLER
 app.use('/', express.static('public'));
+
+app.get('/items', function (req, res) {
+  res.json(items);
+});
+
+// GET HTML FILE
+// app.get('/index', function (req, res) {
+//   res.send('hello');
+// });
 
 // LISTEN TO THE PORT
 app.listen(PORT, function () {
