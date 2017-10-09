@@ -1,0 +1,106 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	color: #A0A0A0;
+	background-color: #0A0A0A
+}
+
+.container{
+	max-width: 1000px;
+	width: 100%;
+	margin: auto;
+}
+
+section .heading,
+section .list-item,
+section .list{
+	display: flex;
+	justify-content: center;
+}
+
+section .heading {
+	padding: 20px 0;
+}
+
+section .list-item form input{
+	background: #1A1A1A;
+	width: 500px;
+	text-indent: 10px;
+	padding: 14px 0;
+	outline: none;
+	border: none
+}
+
+section .list-item {
+	margin: 20px 0;
+}
+
+section .list-item form button{
+	background: #1A1A1A;
+	padding: 13px 0;
+	outline: none;
+	border: none;
+	width: 150px;
+	text-transform: uppercase;
+	cursor: pointer;
+	color: #A0A0A0
+}
+
+section .fa{
+	background: transparent;
+
+}
+
+
+section .list ul{
+	list-style: none;
+}
+
+section .list ul li{
+	padding: 13px 0;
+	width: 650px;
+	background: #1A1A1A;
+	margin-bottom: 5px;
+	display: flex;
+	justify-content: space-between;
+
+}
+
+section .list ul li .text,
+section .list ul li .text p{
+	background: #1A1A1A
+}
+
+section .list ul li .text p{
+	text-indent: 10px;
+	text-transform: capitalize;
+	letter-spacing: 2px;
+	margin-top: 7px;
+}
+
+section .list ul li .btn{
+	background: transparent;
+	position: relative;
+}
+
+section .list ul li .btn:after{
+	content: '';
+	top: -5px;
+	left: 43%;
+	position: absolute;
+	width: 1px;
+	height: 130%;
+	background: #A0A0A0
+}
+section .list ul li .btn button{
+	/*background: #A0A0A0;*/
+	border: none;
+	cursor: pointer;
+	color: #A0A0A0;
+	margin-right: 5px;
+	background: transparent;
+
+
+}
+

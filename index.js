@@ -27,7 +27,7 @@ app.get('/items', function (req, res) {
 
 // LISTEN TO THE PORT
 app.listen(PORT, function () {
-  console.log('listnig to the port  :', PORT);
+  console.log('listnig to the port :', PORT);
 });
 
 // // CREAT A HELLO WORLD IN EXPRESS
