@@ -1,9 +1,10 @@
+// This is the server file
 // TO DO APP
 const express = require('express');
 const app = express();
 const PORT = 4000;
 
-const items = [{description: 'study'}, {description: 'play'} ];
+const items = [{describtion: 'study'}, {describtion: 'play'} ];
 
 // ADD MIDDLEWARE LOG EVERY REQUEST METHOD AND URL middleware always has next, the must has next()
 // IT SHOULD BE IN THE TOP
