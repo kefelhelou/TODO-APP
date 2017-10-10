@@ -1,9 +1,12 @@
 // TO DO APP
 const express = require('express');
 const app = express();
-const PORT = 4000;
+const PORT = 8081;
 
-const items = [{description: 'study'}, {description: 'play'} ];
+const items = [
+	{description: 'study'}, 
+	{description: 'play'} 
+];
 
 // ADD MIDDLEWARE LOG EVERY REQUEST METHOD AND URL middleware always has next, the must has next()
 // IT SHOULD BE IN THE TOP
