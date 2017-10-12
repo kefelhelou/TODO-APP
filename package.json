@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/FACG2/TODO-APP#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "node": "^8.3.0",
     "nodemon": "^1.12.1",
     "pg": "^7.3.0"

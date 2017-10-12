@@ -24,7 +24,7 @@ var listContainer = document.querySelector('#list-container'); // querySelector 
 //   xhr.send();
 // }
 
-function request (method, url, cb) {
+function request (method, url, cb, postData) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function () { // <= this is a callback -- we define a callback and saying this is what we want to do
     if (xhr.readyState == 4 && xhr.status == 200) {
@@ -33,24 +33,30 @@ function request (method, url, cb) {
     }
   };
   xhr.open(method, url, true); // to get the items from the url
-  xhr.send();
+  if (postData){
+    xhr.setRequestHeader("Content-type", "application/json");
+  }
+  xhr.send(postData);
 }
 
 request('GET', '/items', renderList);
 
+addTodo.addEventListener('click', function (event) {
+  event.preventDefault();
+  var value = addItem.value; // to get the value of the input from html
+  request('POST', '/items', renderList, JSON.stringify({describtion: value}));
+  // console.log(todoArray); // to print the result in terminal
+});
+
   // The function that will generate the list
 function renderList (todos/* In side the function i will use this name */) { // converting result and result to html + display to user means render
-  addTodo.addEventListener('click', function (event) {
-    event.preventDefault();
-    var ul = document.createElement('ul'); // create html element but not displayed in the page
-    todos.forEach(function (todo) {
-      var li = document.createElement('li');
-      li.innerText = todo.describtion;
-      ul.appendChild(li);
-    });
-    listContainer.appendChild(ul);
-    // console.log(todoArray); // to print the result in terminal
+  var ul = document.createElement('ul'); // create html element but not displayed in the page
+  todos.forEach(function (todo) {
+    var li = document.createElement('li');
+    li.innerText = todo.describtion;
+    ul.appendChild(li);
   });
+  listContainer.appendChild(ul);
 }
 
 // Practice on forEach , map and filter
